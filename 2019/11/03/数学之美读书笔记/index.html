@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机网络大纲 | Swifthao</title>
+  <title>《数学之美》 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简述1.计算机网络主要指的就是TCP&#x2F;IP协议栈，是互联网的基石 2.容易忘是因为TCP&#x2F;IP技术栈有一大部分都隐藏于操作系统的内核态，较少被接触。 3.学习方法：  反复记忆 多问为什么">
-<meta name="keywords" content="-程序员的基本功">
+  <meta name="description" content="第一章 文字和语言 VS 数字和信息1.信道宽，信息不必压缩就可以直接传递 2.信道窄，信息在传递前需要尽可能压缩，在接收端进行解压">
+<meta name="keywords" content="-读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络大纲">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0&#x2F;index.html">
+<meta property="og:title" content="《数学之美》">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="简述1.计算机网络主要指的就是TCP&#x2F;IP协议栈，是互联网的基石 2.容易忘是因为TCP&#x2F;IP技术栈有一大部分都隐藏于操作系统的内核态，较少被接触。 3.学习方法：  反复记忆 多问为什么">
+<meta property="og:description" content="第一章 文字和语言 VS 数字和信息1.信道宽，信息不必压缩就可以直接传递 2.信道窄，信息在传递前需要尽可能压缩，在接收端进行解压">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-03T07:21:08.000Z">
+<meta property="og:updated_time" content="2019-11-06T12:39:49.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -139,114 +139,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络学习" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数学之美读书笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络大纲
+      《数学之美》
     </h1>
   
 
         
-        <a href="/2019/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2019-11-03T06:20:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+        <a href="/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2019-11-03T09:55:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>1.计算机网络主要指的就是TCP/IP协议栈，是互联网的基石</p>
-<p>2.容易忘是因为TCP/IP技术栈有一大部分都隐藏于操作系统的内核态，较少被接触。</p>
-<p>3.学习方法：</p>
-<ul>
-<li>反复记忆</li>
-<li>多问为什么</li>
-</ul>
+        <h2 id="第一章-文字和语言-VS-数字和信息"><a href="#第一章-文字和语言-VS-数字和信息" class="headerlink" title="第一章 文字和语言 VS 数字和信息"></a>第一章 文字和语言 VS 数字和信息</h2><p>1.信道宽，信息不必压缩就可以直接传递</p>
+<p>2.信道窄，信息在传递前需要尽可能压缩，在接收端进行解压</p>
 <a id="more"></a>
 
-<h2 id="一、TCP-IP协议体系的认知"><a href="#一、TCP-IP协议体系的认知" class="headerlink" title="一、TCP/IP协议体系的认知"></a>一、TCP/IP协议体系的认知</h2><p>1.分层</p>
-<p>一部分处于用户态，一部分处于内核态。数据链路层，网络层，传输层封装于操作系统内核态。应用层存在于操作系统的用户空间，包括DNS，FTP，HTTPs，HTTP，工作中接触较多的是应用层的部分。但其它层的原理必须理解，面试考察。</p>
-<p>2.层与层之间下层对上层是透明的，传输在每一层是对等的。</p>
-<h2 id="二、数据链路层"><a href="#二、数据链路层" class="headerlink" title="二、数据链路层"></a>二、数据链路层</h2><p>1.以太网帧的格式</p>
-<p>2.MTU（最大传输单元）的概念</p>
-<p>3.ARP协议和RARP协议（地址协议和逆地址协议，网卡MAC地址和IP地址互查机制）（网络层和链路层的中间层）ARP报文格式，查询原理，缓存机制</p>
-<h2 id="三、网络层"><a href="#三、网络层" class="headerlink" title="三、网络层"></a>三、网络层</h2><p>1.掌握IP首部格式：</p>
-<p>例如：</p>
-<ul>
-<li>16位分片标识</li>
-<li>DF不分片标志</li>
-<li>MF更多分片标志</li>
-<li>13位片偏移</li>
-<li>8位生存时间TTL</li>
-<li>16位的首部检验和</li>
-<li>等等</li>
+<h2 id="第二章-自然语言处理（从规则到统计）"><a href="#第二章-自然语言处理（从规则到统计）" class="headerlink" title="第二章 自然语言处理（从规则到统计）"></a>第二章 自然语言处理（从规则到统计）</h2><p>基于统计的方法的核心模型是通信系统加隐含马尔可夫模型。</p>
+<p>自然语言处理的研究也从单纯的句法分析和语义理解，变成了非常贴近实际应用的机器翻译，语音识别，文本到数据库自动生成，数据挖掘和知识的获取等等。</p>
+<h2 id="第三章-统计语言模型"><a href="#第三章-统计语言模型" class="headerlink" title="第三章 统计语言模型"></a>第三章 统计语言模型</h2><ul>
+<li>一个句子是否合理，就看它的可能性大小如何</li>
+<li>马尔可夫假设</li>
+<li>N-1阶马尔可夫假设：是一种更普遍的假设，假设某个词和前面若干个词有关，对应的语言模型叫N元模型</li>
+<li>古德-图灵估计（解决样本不足时概率估计的问题）：在统计中相信可靠的统计数据，而对不可信的统计数据打折扣的一种概率估计方法，同时将折扣出来的那一小部分的概率给予未看见的事件</li>
+<li>Zipf定律：一般来说，出现一次的词的数量比出现两次的多，出现两次的比出现三次的多</li>
 </ul>
-<p>2.掌握如何IP分片：</p>
-<p>例如：</p>
+<h2 id="第四章-谈谈分词"><a href="#第四章-谈谈分词" class="headerlink" title="第四章 谈谈分词"></a>第四章 谈谈分词</h2><p>可以穷举所有可能的分词方法并计算出每种可能性下句子的概率，但是这样计算量很大。因此，可以把它看成是一个动态规划问题，并用维特比算法快速求出最佳分词</p>
+<h2 id="第五章-隐含马尔可夫模型"><a href="#第五章-隐含马尔可夫模型" class="headerlink" title="第五章 隐含马尔可夫模型"></a>第五章 隐含马尔可夫模型</h2><p>1.通信的本质就是一个编解码和传输的过程</p>
+<p>2.当自然语言处理问题回归到通信系统中的解码问题时，很多难题都迎刃而解了</p>
+<p>3.通信的六要素</p>
 <ul>
-<li>总长大于MTU值</li>
-<li>画分片情况</li>
-<li>如何避免IP分片（在应用层或传输层做限制）</li>
-<li>确定分片顺序</li>
-<li>确定分片是否全部到达</li>
+<li>信息源</li>
+<li>信道</li>
+<li>接受者</li>
+<li>信息</li>
+<li>上下文</li>
+<li>编码</li>
 </ul>
-<p>3.掌握IP选路</p>
+<p>4.HMM最早的成功应用是语音识别，复杂的语音识别问题居然能如此简单地表述，解决。</p>
+<h2 id="第六章-信息论"><a href="#第六章-信息论" class="headerlink" title="第六章 信息论"></a>第六章 信息论</h2><p>1.香农用Bit这个概念来度量信息量</p>
+<p>2.信息熵的定义</p>
+<p>3.条件熵的定义</p>
+<p>可以证明H(X)&gt;=H(X|Y)</p>
+<p>4.互信息</p>
 <ul>
-<li>会看路由表</li>
-<li>Route print</li>
-<li>路由表每个字段的含义</li>
+<li>表示两个随机事件之间的相关性</li>
+<li>I(X;Y)=H(X)-H(X|Y)</li>
 </ul>
-<p>4.掌握ICMP（因特网控制报文协议）</p>
+<p>5.相对熵（也叫KL散度）</p>
 <ul>
-<li>是一种网络层和传输层的中间协议</li>
-<li>报文格式</li>
-<li>2种查询报文</li>
-<li>5种差错报文</li>
+<li>KL散度是不对称的</li>
+<li>JS散度是对称的</li>
 </ul>
-<h2 id="四、传输层"><a href="#四、传输层" class="headerlink" title="四、传输层"></a>四、传输层</h2><p>1.UDP：</p>
-<ul>
-<li>掌握UDP协议：无连接，不可靠的特点</li>
-<li>首部各个字段</li>
-</ul>
-<p>2.掌握TCP协议（面试集中考察）</p>
-<ul>
-<li>面向连接，可靠</li>
-<li>首部各字段（序号，确认号，首部长度，窗口大小，校验和等特别的，完成可靠功能的部分）</li>
-<li>TCP连接控制机制（三次握手，四次挥手，同时打开，同时关闭，半关闭）</li>
-<li>TCP流量控制机制（滑动窗口、慢启动、拥塞避免、快速重传、快速恢复的算法原理）</li>
-<li>TCP超时重传机制（四个定时器）</li>
-<li>一些问题（为什么三次握手四次挥手？为什么TCP和UDP都存在尾包头？）</li>
-</ul>
-<h2 id="五、应用层"><a href="#五、应用层" class="headerlink" title="五、应用层"></a>五、应用层</h2><p>1.掌握DNS（域名解析）协议</p>
-<ul>
-<li>名字空间</li>
-<li>DNS指针查询（反向查找或逆向解析）基本原理</li>
-<li>DNS缓存</li>
-</ul>
-<p>2.FTP协议（活化石）</p>
-<ul>
-<li>控制连接和数据连接（为什么需要这两种连接）</li>
-<li>两种工作模式（PASV+PORT）</li>
-<li>各种FTP指令和响应码</li>
-<li>FTP断点续传，匿名FTP</li>
-</ul>
-<p>3.HTTP协议</p>
-<ul>
-<li>报文格式（请求报文、响应报文、请求头各种字段、响应头各种字段）</li>
-<li>HTTP状态码</li>
-</ul>
-<p>4.HTTPS协议</p>
-<ul>
-<li>详细握手过程</li>
-<li>各种算法（摘要算法、数字签名、数字证书的原理与过程）</li>
-</ul>
-<hr>
-<h2 id="计算机网络面试题分享"><a href="#计算机网络面试题分享" class="headerlink" title="计算机网络面试题分享"></a>计算机网络面试题分享</h2><p><a href="https://share.weiyun.com/5dqFNj5" target="_blank" rel="noopener">https://share.weiyun.com/5dqFNj5</a></p>
-<p>感谢CodeSheep</p>
+<h2 id="第九章-图论和网络爬虫"><a href="#第九章-图论和网络爬虫" class="headerlink" title="第九章 图论和网络爬虫"></a>第九章 图论和网络爬虫</h2><p>1.离散数学是当代数学的一个重要分支，也是计算机科学的数学基础。它包含：数理逻辑，集合论，图论，近世代数四个分支</p>
+<p>2.图论</p>
+<h2 id="第16章-信息指纹及其应用"><a href="#第16章-信息指纹及其应用" class="headerlink" title="第16章 信息指纹及其应用"></a>第16章 信息指纹及其应用</h2><p>1.信息指纹</p>
+<p>伪随机数产生器算法，通过它将任意很长的整数转换成特定长度的伪随机数</p>
+<p>2.信息指纹的重复性和相似哈希</p>
+<h2 id="第17章-密码学中的数学原理"><a href="#第17章-密码学中的数学原理" class="headerlink" title="第17章 密码学中的数学原理"></a>第17章 密码学中的数学原理</h2><p>1.一个基本原则：加密函数不应该通过几个自变量和函数值就能推出函数本身</p>
+<h2 id="第18章-搜索引擎PageRank算法的反作弊"><a href="#第18章-搜索引擎PageRank算法的反作弊" class="headerlink" title="第18章 搜索引擎PageRank算法的反作弊"></a>第18章 搜索引擎PageRank算法的反作弊</h2><p>计算向量之间的余弦距离来发现相似度</p>
+<h2 id="第20章-不要把鸡蛋放到一个篮子里（谈谈最大熵模型）"><a href="#第20章-不要把鸡蛋放到一个篮子里（谈谈最大熵模型）" class="headerlink" title="第20章 不要把鸡蛋放到一个篮子里（谈谈最大熵模型）"></a>第20章 不要把鸡蛋放到一个篮子里（谈谈最大熵模型）</h2><p>1.最大熵这个名词听起来很深奥，但它的原理很简单，我们每天都在用。说白了，就是保留全部的不确定性，将风险降到最小</p>
+<p>2.最大熵原理指出：</p>
+<p>对一个随机事件的概率分布进行预测时，我们的预测应当满足全部的已知条件，而对未知的情况不要做任何主观假设（不做主观假设很重要！！！）</p>
+<h2 id="第21章-拼音输入法的数学原理"><a href="#第21章-拼音输入法的数学原理" class="headerlink" title="第21章 拼音输入法的数学原理"></a>第21章 拼音输入法的数学原理</h2><p>1.香农第一定理指出：</p>
+<p>对于一个信息，任何编码的长度都不小于它的信息熵</p>
+<h2 id="第23章-布隆过滤器"><a href="#第23章-布隆过滤器" class="headerlink" title="第23章 布隆过滤器"></a>第23章 布隆过滤器</h2><h2 id="第24章-马尔可夫链的扩展–贝叶斯网络"><a href="#第24章-马尔可夫链的扩展–贝叶斯网络" class="headerlink" title="第24章 马尔可夫链的扩展–贝叶斯网络"></a>第24章 马尔可夫链的扩展–贝叶斯网络</h2><p>1.马尔可夫链描述了一种状态序列，其每个状态值取决于前面有限个状态。对很多实际问题而言，这种模型是一种很粗略的简化。在现实生活中，很多事物相互的关系并不能用一条链串起来，很可能是交叉的，这就引出了贝叶斯网络</p>
+<p>2.可以用一个有向图来表示贝叶斯网络，其中每个圆圈代表一个状态，状态之间的连线表示它们之间的因果关系。假定图中的马尔可夫假设成立，即每个状态只跟与其直接相连接的状态相关，而跟与它间接连接的状态没有直接关系，那么它就是贝叶斯网络。</p>
+<p>（不过要注意，AB之间没有直接的有向弧链接，只说明它们之间没有直接的因果关系，但不表明它们之间没有关系，只要有一条从A到B的路径，那么这两个状态之间还是有间接的相关性的）</p>
+<p>3.所有这些关系可以有一个量化的可信度（Belief），即用一个概率描述，也就是说贝叶斯网络的弧上可以有附加的权重。</p>
+<p>4.在网络中，每个节点的概率都可以用贝叶斯公式来计算，贝叶斯网络因此得名。由于网络中每个弧都有一个置信度，贝叶斯网络也被称为信念网络。</p>
+<p>5.马尔可夫链是贝叶斯网络的特例，贝叶斯网络是马尔可夫链的推广</p>
+<p>6.贝叶斯网络的训练：</p>
+<p>（1）蒙特卡洛方法：防止陷入局部最优，用许多的随机数在贝叶斯网络中试一试，看看是否陷入局部最优，这个方法的计算量大</p>
+<p>（2）新的方法是利用信息论，计算节点之间两两的互信息，只保留互信息较大的节点直接的连接，然后再对简化了的网络进行完备的搜索，找到全局优化的结构</p>
+<p>7.总结：</p>
+<p>从数学的层面上来讲，贝叶斯网络是一个加权的有向图，是马尔可夫链的扩展。从认知论的层面看，贝叶斯网络克服了马尔可夫链那种机械式的线性约束。贝叶斯网络有很多应用，除了在前面介绍的文本分类和概念抽取外，在生物统计，图像处理，决策支持系统和博弈论中都有很广泛的应用。</p>
+<h2 id="第25章-条件随机场-文法分析及其他"><a href="#第25章-条件随机场-文法分析及其他" class="headerlink" title="第25章 条件随机场 文法分析及其他"></a>第25章 条件随机场 文法分析及其他</h2><p>1.条件随机场：</p>
+<p>在HMM中，输出只和状态有关，在CRF中观察值可能和前后的状态都有关，CRF是HMM的一种扩展</p>
+<h2 id="第26章-维特比算法"><a href="#第26章-维特比算法" class="headerlink" title="第26章 维特比算法"></a>第26章 维特比算法</h2><p>1.维特比算法是一个特殊但应用广泛的动态规划算法。利用动态规划，可以解决任何一个图中的最短路径问题。而维特比算法是针对一个特殊的图–篱笆网络（Lattice）的有向图的最短路径突出的，它之所以重要，是因为凡事使用HMM描述的问题都可以用它来解码，包括今天的数字通信，语音识别，及其翻译，拼音转汉字，分词等。</p>
+<h2 id="第27章-上帝的算法–EM算法"><a href="#第27章-上帝的算法–EM算法" class="headerlink" title="第27章 上帝的算法–EM算法"></a>第27章 上帝的算法–EM算法</h2><p>EM算法只要有一些训练数据，定义一个最大化函数，剩下的事情就都交给计算机了。经过若干次迭代，我们需要的模型就训练好了。这实在是太美妙了，这也许是造物主特意安排的。所以称之为上帝的算法</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>对P问题，NP问题，NPC问题的介绍：</p>
+<p>如果一个算法的计算量不超过N的多项式函数（Polynomial Function），则称这个算法是多项式函数复杂度的。如果一个问题存在一个多项式复杂度的算法，则称这个问题为P问题（Polynomial的首字母）。这类问题被认为计算机可以有效解决的。但是如果一个算法的计算量比N的多项式函数还要高，虽然从理论上讲如果有足够的时间是可以计算的（图灵机概念下的可计算），但是实际上是做不到的。这时我们称它为非多项式问题（Non-Polynomial）。比如找到每一步围棋的最佳走法。</p>
+<p>但是很多问题不是非黑即白，要么有多项式复杂度的算法，要么没有。有一些问题虽然迄今为止还没有找到多项式复杂度的解，但不等于以后找不到这样的解。</p>
+<p>在非多项式问题中，有一类问题即非确定的多项式（Nondeterministic Polynomial，简称NP）问题特别引起计算机科学家的关注。NP问题的重要性并非来自它可能有多项式时间的算法，事实上绝大多数理论计算机学者都认为NP不可能有多项式时间的算法，即P不等于NP。</p>
+<p>NP问题之所以重要，是因为现实中绝大多数问题都是NP的，另外它与密码理论也有重要的联系。</p>
+<p>如果一个问题，我们能够在多项式复杂度的时间里证明一个答案的正确与否，则不论目前这个问题是否能找到多项式复杂度的算法，都称这个问题为NP问题。</p>
+<p>在NP问题中发现一个被称作NPC的特殊问题类（NP-Complete），所有的NP问题都可以在多项式时间内归约到NPC问题。</p>
+<p>对于计算复杂度至少是NPC甚至更大的问题，我们称它为NP-hard问题。</p>
+<p>寻找一个问题的计算机解法，首先要找多项式复杂度的算法，对于那些至今找不到的算法，而且在应用中无法回避的算法，比如贝叶斯网络的训练算法，我们只好简化问题找近似解</p>
 
       
 
@@ -260,7 +248,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-程序员的基本功</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-读书笔记</a>
         		</li>
       		
 		</ul>
@@ -316,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +318,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《数学之美》
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/29/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%A0%94%E7%A9%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java开源项目学习</div>
+    <a href="/2019/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络大纲</div>
       <i class="icon-circle-right"></i>
     </a>
   
