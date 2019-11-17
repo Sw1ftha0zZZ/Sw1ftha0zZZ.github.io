@@ -18,9 +18,10 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns1.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;3.png">
-<meta property="og:updated_time" content="2019-11-15T09:55:23.000Z">
+<meta property="og:updated_time" content="2019-11-17T06:57:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;1.png">
   
@@ -253,6 +254,10 @@
 <img src="/img/network/dns.jpg"/>
 </div>
 
+<div align=center>
+<img src="/img/network/dns1.jpg"/>
+</div>
+
 <p>（6）本地DNS服务器</p>
 <p>映射缓存存放在本地DNS服务器中，由于主机名和IP地址间的映射不是永久的，DNS服务器在一段时间后将丢弃缓存的信息</p>
 <p>（7）迭代请求和递归请求</p>
@@ -265,6 +270,10 @@
 <img src="/img/network/3.png"/>
 </div>
 <center>递归请求</center>
+
+<p>（a）递归查询：本机向本地域名服务器发出一次查询请求，就静待最终的结果。如果本地域名服务器无法解析，自己会以DNS客户机的身份向其它域名服务器查询，直到得到最终的IP地址告诉本机<br>（b）迭代查询：本地域名服务器向根域名服务器查询，根域名服务器告诉它下一步到哪里去查询，然后它再去查，每次它都是以客户机的身份去各个服务器查询</p>
+<p>通俗地说，递归就是把一件事情交给别人，如果事情没有办完，哪怕已经办了很多，都不要把结果告诉我，我要的是你的最终结果，而不是中间结果；如果你没办完，请你找别人办完。<br>迭代则是我交给你一件事，你能办多少就告诉我你办了多少，然后剩下的事情就由我来办。</p>
+
       
 
       
@@ -346,6 +355,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/11/17/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机网络 应用层
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/15/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
@@ -492,15 +510,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">-科研</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +518,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,11 +534,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-科研</a>
+                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
               </li>
             
             <div class="clearfix"></div>

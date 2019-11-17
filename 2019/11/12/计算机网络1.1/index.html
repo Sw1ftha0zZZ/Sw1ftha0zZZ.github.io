@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;3.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;4.jpg">
-<meta property="og:updated_time" content="2019-11-12T11:56:06.000Z">
+<meta property="og:updated_time" content="2019-11-17T06:28:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;3.jpg">
   
@@ -185,7 +185,7 @@
 <p>交换机是根据MAC地址转发数据帧，而路由器则是根据IP地址来转发IP数据报/分组。数据帧是在IP数据包/分组的基础上封装了帧头（源MAC和目的MAC等）和帧尾（CRC校验码）。那有人就想了，数据帧为什么同时要包含MAC地址和IP地址呢，实际上，数据帧中的IP地址决定最终数据包要到达的主机，而MAC地址则是决定下一跳将要将数据传送给哪台设备（路由器或目的主机）。而且，IP地址是软件实现的，可以描述主机所在的网络，而MAC地址是硬件实现的，每一个网卡在出厂的时候都会将全世界唯一的MAC地址固化在网卡的ROM中，因此MAC地址是不可修改的，但是IP地址是可以由网络管理人员配置修改的。</p>
 <hr>
 <p>4.分工不同</p>
-<p>链路层交换机主要用于组建局域网，而路由器则主要负责连接外网并寻找网络中最合适数据传输的路径。多台主机可以通过网线连接到交换机，这样局域网就组建好了，之后就可以将数据通过交换机发送给局域网中的其他主机了，如飞秋、极域电子教室等局域网软件就是通过交换机把数据转发给其他主机的，当然像极域电子教室这样的广播软件是利用广播技术让所有的主机都收到数据的。然而，通过交换机组建的局域网是无法访问外网的，这时就需要路由器来为我们打开外面精彩世界的大门了。局域网中的所有主机使用的都是私网IP，这时就必须借助路由器将私网IP转化为公网IP（NAT网络地址转换），这样才能访问外网。</p>
+<p>链路层交换机主要用于组建局域网，而路由器则主要负责连接外网并寻找网络中最合适数据传输的路径。多台主机可以通过网线连接到交换机，这样局域网就组建好了，之后就可以将数据通过交换机发送给局域网中的其他主机了，如飞秋、极域电子教室等局域网软件就是通过交换机把数据转发给其他主机的，当然像极域电子教室这样的广播软件是利用广播技术让所有的主机都收到数据的。然而，通过交换机组建的局域网是无法访问外网的，这时就需要路由器来为我们打开外面精彩世界的大门了。 <strong>局域网中的所有主机使用的都是私网IP，这时就必须借助路由器将私网IP转化为公网IP（NAT网络地址转换），这样才能访问外网。</strong></p>
 <hr>
 <p>5.冲突域和广播域</p>
 <p>链路层交换机可以分割冲突域，但不能分割广播域，而路由器既能分割冲突域，又能分割广播域。由交换机连接的网段仍属于同一个广播域，广播数据包会在交换机连接的所有网段上传播，在这种情况下会导致广播风暴和安全漏洞问题，而连接在路由器上的网段会被分配不通的广播域，路由器不会转发广播数据。需要说明的是单播的数据包在局域网中会被交换机唯一地送往目标主机，其他主机不会接收到数据，这是区别于原始的集线器的，数据的到达时间由交换机的转发速率决定，但是交换机会将广播数据转发给局域网中的所有主机。</p>
@@ -429,15 +429,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">-科研</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,7 +437,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,11 +453,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-科研</a>
+                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
               </li>
             
             <div class="clearfix"></div>
