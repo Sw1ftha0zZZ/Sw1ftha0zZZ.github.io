@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: -读书笔记 | Swifthao</title>
+  <title>Effective Java 笔记 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活中的一些事情">
-<meta name="keywords" content="ML DL Sensor">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Swifthao">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0&#x2F;index.html">
+  <meta name="description" content="第2章 创建和销毁对象本章的主题是如何创建和销毁对象：何时以及如何创建对象，何时以及如何避免创建对象，如何确保它们能够适时地销毁，以及如何管理对象销毁之前必须进行的各种清理动作。  第1条 用静态工厂方法代替构造器对于类而言，为了让客户端获取它自身的一个实例，最传统的方法就是提供一个公有的构造器。还有一种方法，也应该在每个程序员的工具箱中占有一席之地。 类可以提供一个公有的静态工厂方法 ，它只是一">
+<meta name="keywords" content="-Effective Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Java 笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;11&#x2F;effective_java2&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="记录生活中的一些事情">
+<meta property="og:description" content="第2章 创建和销毁对象本章的主题是如何创建和销毁对象：何时以及如何创建对象，何时以及如何避免创建对象，如何确保它们能够适时地销毁，以及如何管理对象销毁之前必须进行的各种清理动作。  第1条 用静态工厂方法代替构造器对于类而言，为了让客户端获取它自身的一个实例，最传统的方法就是提供一个公有的构造器。还有一种方法，也应该在每个程序员的工具箱中占有一席之地。 类可以提供一个公有的静态工厂方法 ，它只是一">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-25T14:04:47.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -138,60 +139,210 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-effective_java2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-03T09:55:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《数学之美》</a>
+    <h1 class="article-title" itemprop="name">
+      Effective Java 笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/11/11/effective_java2/" class="archive-article-date">
+  	<time datetime="2019-11-11T13:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第2章-创建和销毁对象"><a href="#第2章-创建和销毁对象" class="headerlink" title="第2章 创建和销毁对象"></a>第2章 创建和销毁对象</h2><p>本章的主题是如何创建和销毁对象：何时以及如何创建对象，何时以及如何避免创建对象，如何确保它们能够适时地销毁，以及如何管理对象销毁之前必须进行的各种清理动作。</p>
+<hr>
+<h3 id="第1条-用静态工厂方法代替构造器"><a href="#第1条-用静态工厂方法代替构造器" class="headerlink" title="第1条 用静态工厂方法代替构造器"></a>第1条 用静态工厂方法代替构造器</h3><p>对于类而言，为了让客户端获取它自身的一个实例，最传统的方法就是提供一个公有的构造器。还有一种方法，也应该在每个程序员的工具箱中占有一席之地。 <strong>类可以提供一个公有的静态工厂方法</strong> ，它只是一个返回类的实例的静态方法。下面是一个来自Boolean（基本类型boolean的装箱类）的简单实例。下面这个方法将boolean基本类型值转换成类一个Boolean对象引用：</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">valueOf</span><span class="params">(<span class="keyword">boolean</span> b)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> b ? Boolean.TRUE : Boolean.FALSE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意，静态工厂方法和设计模式中的工厂方法模式不同（Factory Method）。本条目中所指的静态工厂方法并不直接对应于设计模式中的工厂方法</p>
+<blockquote>
+<p>PS：关于设计模式的部分，见:1.<a href="https://www.runoob.com/design-pattern/factory-pattern.html" target="_blank" rel="noopener">https://www.runoob.com/design-pattern/factory-pattern.html</a></p>
+<p>2.<a href="https://www.runoob.com/w3cnote/factory-pattern.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/factory-pattern.html</a></p>
+<p>3.<a href="https://www.journaldev.com/1392/factory-design-pattern-in-java" target="_blank" rel="noopener">https://www.journaldev.com/1392/factory-design-pattern-in-java</a></p>
+<p>JDK 中的工厂设计模式实例</p>
+<ul>
+<li>java.util.Calendar, ResourceBundle and NumberFormat getInstance() 使用了工厂方法模式</li>
+<li>valueOf() 在包装类中，如Boolean, Integer 也使用了工厂方法模式</li>
+</ul>
+</blockquote>
+<p>提供静态工厂方法而不是构造器，这样做既有优势，也有劣势</p>
+<p>1.优势：</p>
+<p>（1）静态方法与构造器不同的第一大优势在于，它们有名称</p>
+<blockquote>
+<p>当一个类需要多个带有相同签名的构造器时，就用静态工厂方法代替构造器，并且仔细选择名称以便突出静态工厂方法之间的区别</p>
+</blockquote>
+<p>(2) 不必在每次调用它们的时候都创建一个新对象</p>
+<p>(3)它们可以返回原返回类型的任何子类型的对象</p>
+<p>(4)所返回的对象的类可以随着每次调用而发生变化，这取决于静态工厂方法的参数值</p>
+<p>(5)方法返回的对象所属的类，在编写包含该静态工厂方法的类时可以不存在。</p>
+<blockquote>
+<p>这种灵活的静态工厂方法构成了服务提供者框架的基础，例如JDBC（Java数据库连接）API，服务提供者框架是指多个服务提供者实现一个服务，系统为服务提供这的客户端提供多个实现，并把它们从多种实现中解耦出来</p>
+</blockquote>
+<p>2.劣势</p>
+<p>(1)类如果不含公有的或者受保护的构造器，就不能被子类化</p>
+<blockquote>
+<p>但是这样也会因祸得福，因为它推荐cxy使用复合而不是继承，这正是不可变类型所需要的</p>
+</blockquote>
+<p>(2)cxy很难发现它们</p>
+<p>3.一些静态工厂方法的惯用名称</p>
+<p>(1)from：类型转换方法，它只有单个参数，返回该类型的一个相对应的实例</p>
+<p><code>Date d = Date.from(instant);</code></p>
+<p>(2)of:聚合方法，多个参数，返回该类型的一个实例，把它们合并起来</p>
+<p><code>Set&lt;Rank&gt; faceCards = EnumSet.of(Jack, Quenn , King);</code></p>
+<p>(3)valueOf:比前两种更繁琐的替代方法</p>
+<p><code>BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);</code></p>
+<p>(4)instance或者getInstance：返回的实例是通过方法的参数描述的，但是不能说于参数具有同样的值</p>
+<p><code>StackWalker luke = StackWalker.getInstance(options);</code></p>
+<p>(5)create或者newInstance：像上一种一样，但是这两种能够确保每次调用都返回一个新的实例</p>
+<p><code>Object newArray = Array.newInstance(classObject , arrayLen);</code></p>
+<p>(6)getType:像getInstance一样，但是在工厂方法处于不同的类中的时候使用，Type表示工厂方法所返回的对象类型</p>
+<p><code>FileStore fs = Files.getFileStore(path);</code></p>
+<p>(7)newType:像newInstance一样，但是在工厂方法处于不同的类中时使用，Type表示工厂方法所返回的对象类型</p>
+<p><code>BufferedReader br = Files.newBufferReader(path);</code></p>
+<p>(8)type:getType和newType的简版</p>
+<p><code>List&lt;Complaint&gt; litany = Collections.list(legacyLitany);</code></p>
+<p>4.总结</p>
+<p>静态工厂方法和公有构造器各有用处，我们要理解它们各自的长处，静态工厂方法通常更合适，要切记第一反应就是提供公有的构造器，而不先考虑静态工厂</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-读书笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Effective Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/11/effective_java2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/11/11/effective_java1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Effective Java 笔记
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/11/03/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《数学之美》</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -214,9 +365,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
