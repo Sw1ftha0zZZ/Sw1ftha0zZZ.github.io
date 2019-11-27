@@ -239,7 +239,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第3条-用私有构造器或者枚举类型强化Singleton属性"><a href="#第3条-用私有构造器或者枚举类型强化Singleton属性" class="headerlink" title="第3条 用私有构造器或者枚举类型强化Singleton属性"></a>第3条 用私有构造器或者枚举类型强化Singleton属性</h2>
+        <h2 id="第3条-用私有构造器或者枚举类型强化Singleton属性"><a href="#第3条-用私有构造器或者枚举类型强化Singleton属性" class="headerlink" title="第3条 用私有构造器或者枚举类型强化Singleton属性"></a>第3条 用私有构造器或者枚举类型强化Singleton属性</h2><p>Singleton指仅仅被实例化一次的类。Singleton通常被用来代表一个无状态的对象，如函数（24条），或者那些本质上唯一的组件。使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的接口</p>
+<p>实现Singleton有两种常见的方法。<strong>这两种方法都要保持构造器为私有的，并且导出公有的静态类成员</strong> 以便允许客户端能够访问该类的唯一实例。</p>
+        
+          <a class="article-more-a" href="/2019/11/26/ej4/#more">more >></a>
+        
       
 
       

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Effective Java 第二章 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第3条 用私有构造器或者枚举类型强化Singleton属性">
+  <meta name="description" content="第3条 用私有构造器或者枚举类型强化Singleton属性Singleton指仅仅被实例化一次的类。Singleton通常被用来代表一个无状态的对象，如函数（24条），或者那些本质上唯一的组件。使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的接口 实现Singleton有两种常见的方法。这两种方法都要保持构造器为私有的，">
 <meta name="keywords" content="-Effective Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Effective Java 第二章">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;ej4&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="第3条 用私有构造器或者枚举类型强化Singleton属性">
+<meta property="og:description" content="第3条 用私有构造器或者枚举类型强化Singleton属性Singleton指仅仅被实例化一次的类。Singleton通常被用来代表一个无状态的对象，如函数（24条），或者那些本质上唯一的组件。使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的接口 实现Singleton有两种常见的方法。这两种方法都要保持构造器为私有的，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-27T12:28:45.000Z">
+<meta property="og:updated_time" content="2019-11-27T13:57:12.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -159,7 +159,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第3条-用私有构造器或者枚举类型强化Singleton属性"><a href="#第3条-用私有构造器或者枚举类型强化Singleton属性" class="headerlink" title="第3条 用私有构造器或者枚举类型强化Singleton属性"></a>第3条 用私有构造器或者枚举类型强化Singleton属性</h2>
+        <h2 id="第3条-用私有构造器或者枚举类型强化Singleton属性"><a href="#第3条-用私有构造器或者枚举类型强化Singleton属性" class="headerlink" title="第3条 用私有构造器或者枚举类型强化Singleton属性"></a>第3条 用私有构造器或者枚举类型强化Singleton属性</h2><p>Singleton指仅仅被实例化一次的类。Singleton通常被用来代表一个无状态的对象，如函数（24条），或者那些本质上唯一的组件。使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的接口</p>
+<p>实现Singleton有两种常见的方法。<strong>这两种方法都要保持构造器为私有的，并且导出公有的静态类成员</strong> 以便允许客户端能够访问该类的唯一实例。</p>
+<a id="more"></a>
+
+<p>1.在第一种方法中，公有静态成员是个final域：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Singleton with public final field</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Elvis</span></span>&#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Elvis INSTANCE = <span class="keyword">new</span> Elvis();</span><br><span class="line">       <span class="function"><span class="keyword">private</span> <span class="title">Elvis</span><span class="params">()</span></span>&#123;</span><br><span class="line">              pass;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leaveTheBuilding</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>私有构造器仅被调用一次，用来实例化公有的静态final域Elvis.INSTANCE。由于缺少公有的或受保护的构造器，所以保证了Elvis的全局唯一性：一旦Elvis类被实例化，将只会存在一个Elvis实例。客户端的任何行为都不会改变这一点，但要提醒一点：享有特权的客户端可以借助AccessibleObject.setAccessible方法，通过反射机制（65条）调用私有构造器，如果需要抵御这种攻击，可以修改构造器，让它在被要求创建第二个实例时抛出异常。</p>
+<p>2.在第二种方法中，公有的成员是个静态工厂方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Singleton with static factory</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Elvis</span></span>&#123;</span><br><span class="line">       <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Elvis INSTANCE = <span class="keyword">new</span> Elvis();</span><br><span class="line">       <span class="function"><span class="keyword">private</span> <span class="title">Elvis</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Elvis <span class="title">getInstance</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> INSTANCE;&#125;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leaveTheBuilding</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对静态方法Elvis.getInstance的所有调用都会返回同一个对象引用</p>
+<p>这种方法的优点在于：（1）它容易被修改，比如改成为每个调用该方法的线程返回一个唯一的实例（2）如果程序需要，可以编写一个泛型Singleton工厂（30条），除非满足上面两种，否则还是优先考虑上一种方法（公有域）</p>
+<p>3.Singleton与序列化</p>
+<p>为了将上述方法实现的Singleton类变成是可序列化的，仅仅在声明中加上implement Serializable是不够的。为了维护并保证Singleton，必须声明所有实例域都是transient的，并且提供一个readResolve方法（89条）。否则，每次反序列化一个序列化的实例的时候，都会创建一个新的实例</p>
+<p>实现Singleton的第三种方法是声明一个包含单个元素的枚举类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Enum singleton -the preferred approach</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Elvis&#123;</span><br><span class="line">       INSTANCE;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leaveTheBuilding</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方法与公有域类似，但是更加简洁，无偿提供了序列化机制，绝对防止多次实例化，既是在面对复杂的序列化或者反射攻击的时候，虽然这种方法还没有广泛使用，但是单元素的枚举类型经常成为实现Singleton的最佳方法。如果Singleton必须扩展一个超类，而不是扩展Enum的时候，不建议使用这个方法（虽然可以声明枚举去实现接口）</p>
+<hr>
+<h2 id="第4条-通过私有构造器强化不可实例化的能力"><a href="#第4条-通过私有构造器强化不可实例化的能力" class="headerlink" title="第4条 通过私有构造器强化不可实例化的能力"></a>第4条 通过私有构造器强化不可实例化的能力</h2><p>有时需要编写只包含静态方法和静态域的类（比如写一个包含所有要用到的常数的类Constants），例如java.lang.Math,java.util.Arrays等工具类，这些工具类不希望被实例化，实例化没有任何意义。然而在缺少显式构造器的情况下，编译器会自动提供一个公有的无参的缺省构造器。</p>
+<p>企图将类做成抽象类来强制该类不可被实例化是行不通的。</p>
+<p>由于当类不包含显式构造器时，编译器才会生成缺省的构造器，因此<strong>让该类包含一个私有的构造器可以保证它不会被实例化</strong></p>
+<p>这种用法的坏处：它使得一个类不可以被子类化，所有的构造器都必须显式或隐式调用超累构造器</p>
+<hr>
+<h2 id="第5条-优先考虑依赖注入来引用资源"><a href="#第5条-优先考虑依赖注入来引用资源" class="headerlink" title="第5条 优先考虑依赖注入来引用资源"></a>第5条 优先考虑依赖注入来引用资源</h2><p>不要用Singleton和静态工具类来实现依赖一个或多个底层资源的类，且该资源的行为会影响到该类的行为，也不要直接用这个类来创建这些资源。而是应该将这些资源或工厂传给构造器，通过它们来创建类，这个实践被称为依赖注入</p>
+
       
 
       
