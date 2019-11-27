@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机网络 自顶向下 第二章 | Swifthao</title>
+  <title>Java 基础知识补充 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第二章 应用层1.应用层协议原理 （1）进行通信的实际上是进程而不是程序，一个进程可以被认为是运行在端系统上的一个程序，在两个不同的端系统上，通过跨越计算机网络交换报文而相互通信 （2）网络应用程序由成对的进程组成，这些进程通过网络相互发送报文，进程通过一个称为套接字的软件接口向网络发送报文和从网络接收报文 （3）因此，套接字也被称为应用程序和网络之间的API，应用程序开发者可以控制套接字在应用层">
-<meta name="keywords" content="-计算机网络">
+  <meta name="description" content="简介1.Java语言是体系结构中立的： Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。 2.Java语言是可移植的： 这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Ja">
+<meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络 自顶向下 第二章">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2&#x2F;index.html">
+<meta property="og:title" content="Java 基础知识补充">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="第二章 应用层1.应用层协议原理 （1）进行通信的实际上是进程而不是程序，一个进程可以被认为是运行在端系统上的一个程序，在两个不同的端系统上，通过跨越计算机网络交换报文而相互通信 （2）网络应用程序由成对的进程组成，这些进程通过网络相互发送报文，进程通过一个称为套接字的软件接口向网络发送报文和从网络接收报文 （3）因此，套接字也被称为应用程序和网络之间的API，应用程序开发者可以控制套接字在应用层">
+<meta property="og:description" content="简介1.Java语言是体系结构中立的： Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。 2.Java语言是可移植的： 这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Ja">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;3.png">
-<meta property="og:updated_time" content="2019-11-17T06:57:50.000Z">
+<meta property="og:updated_time" content="2019-11-27T11:33:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
   
@@ -145,134 +139,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java基础知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络 自顶向下 第二章
+      Java 基础知识补充
     </h1>
   
 
         
-        <a href="/2019/11/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2/" class="archive-article-date">
-  	<time datetime="2019-11-15T07:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+        <a href="/2019/11/27/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+  	<time datetime="2019-11-27T13:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第二章-应用层"><a href="#第二章-应用层" class="headerlink" title="第二章 应用层"></a>第二章 应用层</h2><p>1.应用层协议原理</p>
-<p>（1）进行通信的实际上是进程而不是程序，一个进程可以被认为是运行在端系统上的一个程序，在两个不同的端系统上，通过跨越计算机网络交换报文而相互通信</p>
-<p>（2）网络应用程序由成对的进程组成，这些进程通过网络相互发送报文，进程通过一个称为套接字的软件接口向网络发送报文和从网络接收报文</p>
-<p>（3）因此，套接字也被称为应用程序和网络之间的API，应用程序开发者可以控制套接字在应用层端的一切，但是对该套接字的运输层端几乎没有控制权</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.Java语言是体系结构中立的：</p>
+<p>Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。</p>
+<p>2.Java语言是可移植的：</p>
+<p>这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Java编译器是用Java实现的，Java的运行环境是用ANSI C实现的。</p>
 <a id="more"></a>
 
-<p>（4）应用程序开发者对于运输层的控制权仅限于：</p>
-<ul>
-<li>选择运输层协议</li>
-<li>也许能设定几个运输层参数，如最大缓存和最大报文段长度等</li>
-</ul>
-<p>（5）一个运输层协议可以为调用它的应用程序提供的服务</p>
-<ul>
-<li>可靠数据传输</li>
-<li>吞吐量</li>
-<li>定时</li>
-<li>安全性</li>
-</ul>
-<p>（6）TCP包括面向连接的服务和可靠数据传输，还提供拥塞控制机制；UDP无连接，不可靠，无拥塞控制</p>
-<p>（7）SSL（secure sockets layer）安全套接字层：是在安全方面对TCP的一种加强，这种强化是在 <strong>应用层上实现的</strong></p>
-<p>（8）应用层协议定义了运行在不同端系统上的应用程序进程如何相互传递报文，特别是应用层定义了：</p>
-<ul>
-<li>交换的报文类型，例如请求报文和响应报文</li>
-<li>各种报文类型的语法，如报文中的各个字段以及这些字段是如何描述的</li>
-<li>字段的语义，即这些字段中信息的含义</li>
-<li>确定一个进程何时以及如何发送报文，对报文进行相应的规则</li>
-</ul>
-<p>2.Web和HTTP</p>
-<p>（1）Web的应用层协议是超文本传输协议HTTP，客户程序和服务器程序运行在不同的端系统中，通过交换HTTP报文进行绘画，HTTP定义了这些报文的结构以及客户和服务器进行报文交换的方式</p>
-<p>（2）HTTP使用TCP作为它的支撑运输协议（而不是在UDP上运行）</p>
-<p>（3）HTTP服务器并不保存关于客户的任何信息，所以说HTTP是一个无状态协议：假定某个特定的用户在短短几秒内两次请求同一个对象，服务器并不会因为刚刚为这个用户提供了该对象就不再作出反应，而是重新发送该对象，就好像服务器完全忘记不久前的事情一样</p>
-<p>（4）非持续连接：每个请求／响应对是经一个单独的TCP连接发送</p>
-<p>非持续连接：所有的请求响应经相同的TCP连接发送</p>
-<p>（5）HTTP报文由两种：请求报文和响应报文</p>
-<p>对HTTP报文的详细描述见：</p>
-<p>（6）用户与服务器的交互：cookie</p>
-<p>HTTP是无状态的，这简化了服务器的设计。cookie可以用于标识一个用户，在无状态的HTTP之上建立一个用户会话层</p>
-<p>cookie包含四个组件：</p>
-<ul>
-<li>在HTTP响应报文中的cookie 首部行</li>
-<li>在HTTP请求报文中的cookie 首部行</li>
-<li>保持在用户主机中的 cookie 文件并由用户浏览器管理</li>
-<li>位于Web站点的后端数据库</li>
-</ul>
-<div align=center>
-<img src="/img/network/1.png"/>
-</div>
-
-<p>（7）<strong>Web缓存</strong> 也叫代理服务器，可以代表初始Web服务器来满足HTTP请求的网络空间实体，它既是服务器又是客户。</p>
-<p>Web缓存器通常由ISP购买并安装，一所大学可能在它的校园网上安装一台缓存器，并且将所有校园网上的用户浏览器配置为指向它</p>
-<p>Web缓存器的好处：</p>
-<ul>
-<li>减少对客户请求的响应时间</li>
-<li>减少一个机构的接入链路到因特网的通信量</li>
-<li>从整体上降低因特网上的Web流量，从而改善来所有应用的性能</li>
-</ul>
-<p>（8）<strong>条件GET方法</strong></p>
-<p>条件GET：允许缓存器证实它的对象是最新的</p>
-<ul>
-<li>请求报文中使用GET方法</li>
-<li>请求报文中包含一个“If-Modified-Since：”首部行</li>
-</ul>
-<p>缓存器在存储对象的同时也存储了最后修改日期。如果没有修改，响应报文中不包含请求的对象</p>
-<p>3.FTP</p>
-<p>（1）TCP数据连接：端口20</p>
-<p>（2）TCP控制连接：端口21</p>
-<p>4.邮件</p>
-<p>（1）SMTP：25，推协议</p>
-<p>（2）HTTP：拉协议</p>
-<p>5.DNS（Domain Name System）：互联网的目录服务</p>
-<p>（1）DNS是一种进行主机名到IP地址转换的目录服务，运行在UDP之上，使用53号端口</p>
-<p>（2）DNS通常是其他应用层协议所使用的，将用户提供的主机名解析为IP地址</p>
-<p>（3）处理进行主机名到IP地址的转换外，DNS还提供以下服务：</p>
-<ul>
-<li>主机别名</li>
-<li>邮件服务器别名</li>
-<li>负载分配</li>
-</ul>
-<p>（4）DNS原理概述</p>
-<ul>
-<li>分布式，层次数据库</li>
-<li>DNS缓存</li>
-</ul>
-<p>（5）DNS服务器层次结构</p>
-<p>DNS服务器：根DNS服务器，顶级域DNS服务器（TLD），权威DNS服务器</p>
-<div align=center>
-<img src="/img/network/dns.jpg"/>
-</div>
-
-<div align=center>
-<img src="/img/network/dns1.jpg"/>
-</div>
-
-<p>（6）本地DNS服务器</p>
-<p>映射缓存存放在本地DNS服务器中，由于主机名和IP地址间的映射不是永久的，DNS服务器在一段时间后将丢弃缓存的信息</p>
-<p>（7）迭代请求和递归请求</p>
-<div align=center>
-<img src="/img/network/2.png"/>
-</div>
-<center>迭代请求</center>
-
-<div align=center>
-<img src="/img/network/3.png"/>
-</div>
-<center>递归请求</center>
-
-<p>（a）递归查询：本机向本地域名服务器发出一次查询请求，就静待最终的结果。如果本地域名服务器无法解析，自己会以DNS客户机的身份向其它域名服务器查询，直到得到最终的IP地址告诉本机<br>（b）迭代查询：本地域名服务器向根域名服务器查询，根域名服务器告诉它下一步到哪里去查询，然后它再去查，每次它都是以客户机的身份去各个服务器查询</p>
-<p>通俗地说，递归就是把一件事情交给别人，如果事情没有办完，哪怕已经办了很多，都不要把结果告诉我，我要的是你的最终结果，而不是中间结果；如果你没办完，请你找别人办完。<br>迭代则是我交给你一件事，你能办多少就告诉我你办了多少，然后剩下的事情就由我来办。</p>
+<p>3.Java语言是解释型的：</p>
+<p>如前所述，Java程序在Java平台上被编译为字节码格式，然后可以在实现这个Java平台的任何系统中运行。在运行时，Java平台中的Java解释器对这些字节码进行解释执行，执行过程中需要的类在联接阶段被载入到运行环境中。</p>
+<p>4.Java语言是多线程的：</p>
+<p>在Java语言中，线程是一种特殊的对象，它必须由Thread类或其子（孙）类来创建。通常有两种方法来创建线程：其一，使用型构为Thread(Runnable)的构造子类将一个实现了Runnable接口的对象包装成一个线程，其二，从Thread类派生出子类并重写run方法，使用该子类创建的对象即为线程。值得注意的是Thread类已经实现了Runnable接口，因此，任何一个线程均有它的run方法，而run方法中包含了线程所要运行的代码。线程的活动由一组方法来控制。Java语言支持多个线程的同时执行，并提供多线程之间的同步机制（关键字为synchronized）</p>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>1.synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。</p>
+<p>2.序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。<br>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</p>
+<p>3.volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。<br>一个 volatile 对象引用可能是 null。</p>
+<p>通常情况下，在一个线程调用 run() 方法（在 Runnable 开启的线程），在另一个线程调用 stop() 方法。 如果 第一行 中缓冲区的 active 值被使用，那么在 第二行 的 active 值为 false 时循环不会停止。<br>但是以上代码中我们使用了 volatile 修饰 active，所以该循环会停止。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。<br>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。<br>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。<br>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-regular-expressions.html</a></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做 finalize( )，它用来清除回收对象。<br>例如，你可以使用 finalize() 来确保一个对象打开的文件被关闭了。</p>
+<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p><a href="https://www.runoob.com/java/java-files-io.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-files-io.html</a></p>
+<h2 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h2><p><a href="https://www.runoob.com/java/java-scanner-class..html" target="_blank" rel="noopener">https://www.runoob.com/java/java-scanner-class..html</a></p>
 
       
 
@@ -286,7 +191,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
         		</li>
       		
 		</ul>
@@ -342,7 +247,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/27/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -356,18 +261,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/17/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          计算机网络 应用层
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/15/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何在github上查找开源项目</div>
+    <a href="/2019/11/26/ej4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Effective Java 第二章</div>
       <i class="icon-circle-right"></i>
     </a>
   
