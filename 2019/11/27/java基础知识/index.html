@@ -16,8 +16,10 @@
 <meta property="og:site_name" content="Swifthao">
 <meta property="og:description" content="简介1.Java语言是体系结构中立的： Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。 2.Java语言是可移植的： 这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Ja">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-27T11:33:42.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;java&#x2F;1.jpg">
+<meta property="og:updated_time" content="2019-11-30T12:47:22.000Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;java&#x2F;1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
   
@@ -169,6 +171,11 @@
 <p>如前所述，Java程序在Java平台上被编译为字节码格式，然后可以在实现这个Java平台的任何系统中运行。在运行时，Java平台中的Java解释器对这些字节码进行解释执行，执行过程中需要的类在联接阶段被载入到运行环境中。</p>
 <p>4.Java语言是多线程的：</p>
 <p>在Java语言中，线程是一种特殊的对象，它必须由Thread类或其子（孙）类来创建。通常有两种方法来创建线程：其一，使用型构为Thread(Runnable)的构造子类将一个实现了Runnable接口的对象包装成一个线程，其二，从Thread类派生出子类并重写run方法，使用该子类创建的对象即为线程。值得注意的是Thread类已经实现了Runnable接口，因此，任何一个线程均有它的run方法，而run方法中包含了线程所要运行的代码。线程的活动由一组方法来控制。Java语言支持多个线程的同时执行，并提供多线程之间的同步机制（关键字为synchronized）</p>
+<div align=center>
+<img src="/img/java/1.jpg"/>
+</div>
+
+
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>1.synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。</p>
 <p>2.序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。<br>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</p>
 <p>3.volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。<br>一个 volatile 对象引用可能是 null。</p>
@@ -178,6 +185,11 @@
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做 finalize( )，它用来清除回收对象。<br>例如，你可以使用 finalize() 来确保一个对象打开的文件被关闭了。</p>
 <h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p><a href="https://www.runoob.com/java/java-files-io.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-files-io.html</a></p>
 <h2 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h2><p><a href="https://www.runoob.com/java/java-scanner-class..html" target="_blank" rel="noopener">https://www.runoob.com/java/java-scanner-class..html</a></p>
+<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p><a href="https://blog.csdn.net/booirror/article/details/20007009" target="_blank" rel="noopener">https://blog.csdn.net/booirror/article/details/20007009</a></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li>逻辑操作 &amp;&amp; || ！</li>
+<li>按位操作 &amp; | ^</li>
+</ul>
 
       
 
@@ -260,6 +272,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/11/30/lambda/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java8 lambda表达式
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/26/ej4/" id="article-nav-older" class="article-nav-link-wrap">
@@ -406,6 +427,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-Java 面试</a>
               </li>
              
@@ -430,11 +455,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机网络 应用层 | Swifthao</title>
+  <title>Java8 lambda表达式 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DNS协议1.名字空间    2.DNS指针查询（反向查找或逆向解析）基本原理原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;jackxinxu2100&#x2F;article&#x2F;details&#x2F;8145318 正向解析：通过域名查找ip；反向解析：通过ip查找域名；">
-<meta name="keywords" content="-计算机网络">
+  <meta name="description" content="相关内容Lambda 表达式，也可称为闭包,Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中） lambda表达式的特点：  可选类型声明：不需要声明参数类型，编译器可以统一识别参数值 可选的参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号 可选的大括号：如果主体包含了一个语句，就不需要使用大括号 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，">
+<meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络 应用层">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:title" content="Java8 lambda表达式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;lambda&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="DNS协议1.名字空间    2.DNS指针查询（反向查找或逆向解析）基本原理原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;jackxinxu2100&#x2F;article&#x2F;details&#x2F;8145318 正向解析：通过域名查找ip；反向解析：通过ip查找域名；">
+<meta property="og:description" content="相关内容Lambda 表达式，也可称为闭包,Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中） lambda表达式的特点：  可选类型声明：不需要声明参数类型，编译器可以统一识别参数值 可选的参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号 可选的大括号：如果主体包含了一个语句，就不需要使用大括号 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns1.jpg">
-<meta property="og:updated_time" content="2019-11-19T09:32:58.000Z">
+<meta property="og:updated_time" content="2019-11-30T12:59:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;network&#x2F;dns1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
   
@@ -141,91 +139,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计网应用层总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-lambda" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络 应用层
+      Java8 lambda表达式
     </h1>
   
 
         
-        <a href="/2019/11/17/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2019-11-17T06:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+        <a href="/2019/11/30/lambda/" class="archive-article-date">
+  	<time datetime="2019-11-30T10:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><h3 id="1-名字空间"><a href="#1-名字空间" class="headerlink" title="1.名字空间"></a>1.名字空间</h3><div align=center>
-<img src="/img/network/dns1.jpg"/>
-</div>
-
-<h3 id="2-DNS指针查询（反向查找或逆向解析）基本原理"><a href="#2-DNS指针查询（反向查找或逆向解析）基本原理" class="headerlink" title="2.DNS指针查询（反向查找或逆向解析）基本原理"></a>2.DNS指针查询（反向查找或逆向解析）基本原理</h3><p>原文链接：<a href="https://blog.csdn.net/jackxinxu2100/article/details/8145318" target="_blank" rel="noopener">https://blog.csdn.net/jackxinxu2100/article/details/8145318</a></p>
-<p>正向解析：通过域名查找ip；<br>反向解析：通过ip查找域名；</p>
+        <h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><p>Lambda 表达式，也可称为闭包,Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）</p>
+<p>lambda表达式的特点：</p>
+<ul>
+<li>可选类型声明：不需要声明参数类型，编译器可以统一识别参数值</li>
+<li>可选的参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号</li>
+<li>可选的大括号：如果主体包含了一个语句，就不需要使用大括号</li>
+<li>可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值</li>
+</ul>
 <a id="more"></a>
 
-<p>域名是为了方便记忆而专门建立的一套地址转换系统，要访问一台互联网上的服务器，最终还必须通过IP地址来实现，域名解析就是将域名重新转换为IP地址的过程。这一过程通过域名解析系统DNS来完成。</p>
-<p>正向解析：通过主机名获取其对应的广域网IP地址；<br>同时通过主机名名称查看正向解析信息：</p>
-<p>命令行输入 nslookup domain.</p>
-<p>从返回的信息中可以看到正向解析的结果。</p>
-<p>C:&gt;nslookup <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a></p>
-<p>Server:  zj-ns1.cableplus.com.cn</p>
-<p>Address:  219.233.241.166    ——DNS名字服务器信息</p>
-<p>Non-authoritative answer:</p>
-<p>Name:    <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a></p>
-<p>Addresses:  2404:6800:4005:c00::63</p>
-<pre><code>74.125.128.106
-74.125.128.147
-74.125.128.99
-74.125.128.103
-74.125.128.104
-74.125.128.105    -------www.google.com的IP地址群</code></pre><p>接下来我们先来了解一下什么是IP反向解析。我们经常使用到的DNS服务器里面有两个区域，即“正向查找区域”和“反向查找区域”，正向查找区域就是我们通常所说的域名解析，反向查找区域即是这里所说的IP反向解析，它的作用就是通过查询IP地址的PTR记录来得到该IP地址指向的域名，当然，要成功得到域名就必需要有该IP地址的PTR记录。PTR记录是邮件交换记录的一种，邮件交换记录中有A记录和PTR记录，A记录解析名字到地址，而PTR记录解析地址到名字。地址是指一个客户端的IP地址，名字是指一个客户的完全合格域名。通过对PTR记录的查询，达到反查的目的。</p>
-<p>反向域名解析系统(Reverse DNS)的功能确保适当的邮件交换记录是生效的。反向域名解析与通常的正向域名解析相反，提供IP地址到域名的对应。IP反向解析主要应用到邮件服务器中来阻拦垃圾邮件，特别是在国外。多数垃圾邮件发送者使用动态分配或者没有注册域名的IP地址来发送垃圾邮件，以逃避追踪，使用了域名反向解析后，就可以大大降低垃圾邮件的数量。</p>
-<p>比如你用 <a href="mailto:xxx@name.com" target="_blank" rel="noopener">xxx@name.com</a> 这个邮箱给我的邮箱 <a href="mailto:123@163.com" target="_blank" rel="noopener">123@163.com</a> 发了一封信。163邮件服务器接到这封信会查看这封信的信头文件，这封信的信头文件会显示这封信是由哪个IP地址发出来的。然后根据这个IP地址进行反向解析，如果反向解析到这个IP所对应的域名是name.com 那么就接受这封邮件，如果反向解析发现这个IP没有对应到name.com，那么就拒绝这封邮件。</p>
-<p>由于在域名系统中，一个IP地址可以对应多个域名，因此从IP出发去找域名，理论上应该遍历整个域名树，但这在Internet上是不现实的。为了完成逆向域名解析，系统提供一个特别域，该特别域称为逆向解析域in-addr.arpa。这样欲解析的IP地址就会被表达成一种像域名一样的可显示串形式，后缀以逆向解析域域<br>名”in-addr.arpa”结尾。<br>    例如一个IP地址：222.211.233.244，其逆向域名表达方式为：244.233.221.222.in-addr.arpa</p>
-<p>两种表达方式中IP地址部分顺序恰好相反，因为域名结构是自底向上(从子域到域)，而IP地址结构是自顶向下(从网络到主机)的。实质上逆向域名解析是将IP地址表达成一个域名,以地址做为索引的域名空间,这样逆向解析的很大部分可以纳入正向解析中。</p>
-<p>查看反向解析信息：</p>
-<pre><code>命令行输入 nslookup -qt=ptr yourIP  
-从返回的信息中您可以看到反向解析的结果。</code></pre><p>C:&gt;nslookup -qt=ptr 74.125.128.106</p>
-<p>Server:  zj-ns1.cableplus.com.cn</p>
-<p>Address:  219.233.241.166                 —–DNS名字服务器信息</p>
-<p>Non-authoritative answer:</p>
-<p>106.128.125.74.in-addr.arpa     name = hg-in-f106.1e100.net</p>
-<p>125.74.in-addr.arpa     nameserver = NS4.GOOGLE.COM</p>
-<p>125.74.in-addr.arpa     nameserver = NS1.GOOGLE.COM</p>
-<p>125.74.in-addr.arpa     nameserver = NS2.GOOGLE.COM</p>
-<p>125.74.in-addr.arpa     nameserver = NS3.GOOGLE.COM    —对应的域名</p>
-<p>NS1.GOOGLE.COM  internet address = 216.239.32.10</p>
-<p>NS2.GOOGLE.COM  internet address = 216.239.34.10</p>
-<p>NS3.GOOGLE.COM  internet address = 216.239.36.10</p>
-<p>NS4.GOOGLE.COM  internet address = 216.239.38.10</p>
-<h3 id="DNS详解"><a href="#DNS详解" class="headerlink" title="DNS详解"></a>DNS详解</h3><p><a href="https://jocent.me/2017/06/18/dns-protocol-principle.html" target="_blank" rel="noopener">https://jocent.me/2017/06/18/dns-protocol-principle.html</a></p>
-<hr>
-<h2 id="FTP协议"><a href="#FTP协议" class="headerlink" title="FTP协议"></a>FTP协议</h2><h3 id="FTP两种连接"><a href="#FTP两种连接" class="headerlink" title="FTP两种连接"></a>FTP两种连接</h3><p>一个完整的FTP文件传输需要建立两种类型的连接，一种为文件传输下命令，称为控制连接，另一种实现真正的文件传输，称为数据连接</p>
-<p>1.控制连接</p>
-<p>客户端希望与FTP服务器建立上传下载的数据传输时，它首先向服务器的TCP 21端口发起一个建立连接的请求，FTP服务器接受来自客户端的请求，完成连接的建立过程，这样的连接就称为FTP控制连接</p>
-<p>2.数据连接</p>
-<p>FTP控制连接建立之后，即可开始传输文件，传输文件的连接称为FTP数据连接，使用TCP 20号端口。FTP数据连接就是FTP传输数据的过程，它有两种传输模式</p>
-<h3 id="FTP两种工作模式（PORT-PASV）"><a href="#FTP两种工作模式（PORT-PASV）" class="headerlink" title="FTP两种工作模式（PORT+PASV）"></a>FTP两种工作模式（PORT+PASV）</h3><p>详见：<a href="https://my.oschina.net/binny/blog/17469" target="_blank" rel="noopener">https://my.oschina.net/binny/blog/17469</a></p>
-<h3 id="FTP指令和状态码"><a href="#FTP指令和状态码" class="headerlink" title="FTP指令和状态码"></a>FTP指令和状态码</h3><p><a href="https://blog.csdn.net/yongaini10/article/details/55095784" target="_blank" rel="noopener">https://blog.csdn.net/yongaini10/article/details/55095784</a></p>
-<h3 id="FTP断点续传"><a href="#FTP断点续传" class="headerlink" title="FTP断点续传"></a>FTP断点续传</h3><p>断点续传功能其实就是在发送的过程中，记录下发送的进度，当出现包括网络中断等发送出错的情况下，断开连接。等下次网络好的情况下，继续发送剩余文件的过程。</p>
-<p>对于ftp的断点续传上传的功能实现，FTP协议中提供了一条APPE的控制命令用来追加文件，我们所实现的断点续传的命令就是围绕着这个命令进行的。</p>
-<p>1、 在正常上传的过程中，记录下已经发送的文件的长度</p>
-<p>2、 当网络发送异常时，记录当前发送文件长度，并关闭当前ftp连接，结束ftp的发送过程</p>
-<p>3、 当网络正常后，重新开始建立ftp的连接，此时由上传文件改为APPE命令，并在数据连接上发送剩余的数据到ftp服务器。</p>
-<h3 id="匿名FTP"><a href="#匿名FTP" class="headerlink" title="匿名FTP"></a>匿名FTP</h3><p>匿名FTP是这样一种机制，用户可通过它连接到远程FTP服务器上，进行文件的上传或下载，而不需要成为其注册用户。系统管理员建立一个特殊的用户帐号(匿名帐号)，一般名为anonymous或助，互联网上的任何人在任何地方都可使用该用户的帐号。</p>
-<p>通过FTP程序连接匿名FTP服务器的方式同连接普通FTP服务器的方式类似，只是在要求提供用户帐号时必须输人anonymous或ftP，而该用户帐号的口令可以是任意的字符。</p>
-<p>当远程服务器提供匿名FTP服务时，会预先指定某些目录及文件向公众开放，允许匿名用户的存取，而系统中的其余目录则处于隐匿状态。作为一种安全措施，大多数匿名FTP服务器都只允许用户下载文件，而不允许用户上传文件。</p>
-<hr>
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p><a href="https://www.runoob.com/http/http-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/http/http-tutorial.html</a></p>
-<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p><a href="https://www.cnblogs.com/jpfss/p/10984966.html" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/p/10984966.html</a></p>
-<hr>
-<h2 id="HTTPS协议"><a href="#HTTPS协议" class="headerlink" title="HTTPS协议"></a>HTTPS协议</h2><h3 id="详细握手过程"><a href="#详细握手过程" class="headerlink" title="详细握手过程"></a>详细握手过程</h3><h3 id="各种算法"><a href="#各种算法" class="headerlink" title="各种算法"></a>各种算法</h3><p>待完善</p>
+<p>使用lambda表达式要注意以下两点：</p>
+<ul>
+<li>Lambda 表达式主要用来定义行内执行的方法类型接口，例如，一个简单方法接口。在上面例子中，我们使用各种类型的Lambda表达式来定义MathOperation接口的方法。然后我们定义了sayMessage的执行</li>
+<li>Lambda 表达式免去了使用匿名方法的麻烦，并且给予Java简单但是强大的函数化的编程能力</li>
+</ul>
+<p>下面是使用 lambdas 来实现 Runnable 接口的示例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.1使用匿名内部类  </span></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"Hello world !"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;).start();  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 1.2使用 lambda expression  </span></span><br><span class="line"><span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">"Hello world !"</span>)).start();  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 2.1使用匿名内部类  </span></span><br><span class="line">Runnable race1 = <span class="keyword">new</span> Runnable() &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"Hello world !"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 2.2使用 lambda expression  </span></span><br><span class="line">Runnable race2 = () -&gt; System.out.println(<span class="string">"Hello world !"</span>);  </span><br><span class="line"><span class="comment">// 直接调用 run 方法(没开新线程哦!)  </span></span><br><span class="line">race1.run();  </span><br><span class="line">race2.run();</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.runoob.com/java/java8-lambda-expressions.html" target="_blank" rel="noopener">https://www.runoob.com/java/java8-lambda-expressions.html</a></p>
+<p><a href="https://www.jianshu.com/p/95b168bea405" target="_blank" rel="noopener">https://www.jianshu.com/p/95b168bea405</a></p>
 
       
 
@@ -239,7 +192,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
         		</li>
       		
 		</ul>
@@ -295,7 +248,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/17/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8%E5%B1%82%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/30/lambda/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +262,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/21/java_review/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/30/handler/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java面试
+          handler
         
       </div>
     </a>
   
   
-    <a href="/2019/11/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">计算机网络 自顶向下 第二章</div>
+    <a href="/2019/11/27/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 基础知识补充</div>
       <i class="icon-circle-right"></i>
     </a>
   
