@@ -6,17 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Effective Java 第二章 | Swifthao</title>
+  <title>Archives: 2019/12 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第2条 遇到多个构造器参数时要考虑使用构建器对于有几个必需参数以及很多个可选参数的构造函数，而且很多产品在某些可选域内都会有非零的值 1.重叠构造器 在这种模式下，提供的第一个构造器只有必要的参数，第二个构造器有一个可选参数，第三个构造器有两个可选参数，以此类推，最后一个构造器包含所有可选的参数。 重叠构造器模式可行，但是当有许多参数的时候，客户端代码会很难编写，并且难以阅读">
-<meta name="keywords" content="-Effective Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Effective Java 第二章">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;effective_java3&#x2F;index.html">
+  <meta name="description" content="记录生活中的一些事情">
+<meta name="keywords" content="ML DL Sensor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Swifthao">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
-<meta property="og:description" content="第2条 遇到多个构造器参数时要考虑使用构建器对于有几个必需参数以及很多个可选参数的构造函数，而且很多产品在某些可选域内都会有非零的值 1.重叠构造器 在这种模式下，提供的第一个构造器只有必要的参数，第二个构造器有一个可选参数，第三个构造器有两个可选参数，以此类推，最后一个构造器包含所有可选的参数。 重叠构造器模式可行，但是当有许多参数的时候，客户端代码会很难编写，并且难以阅读">
+<meta property="og:description" content="记录生活中的一些事情">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-27T12:30:17.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -139,172 +138,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-effective_java3" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Effective Java 第二章
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/04/Java%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-12-04T09:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/04/Java%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/">Java 基础教程</a>
     </h1>
   
 
-        
-        <a href="/2019/11/26/effective_java3/" class="archive-article-date">
-  	<time datetime="2019-11-26T13:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第2条-遇到多个构造器参数时要考虑使用构建器"><a href="#第2条-遇到多个构造器参数时要考虑使用构建器" class="headerlink" title="第2条 遇到多个构造器参数时要考虑使用构建器"></a>第2条 遇到多个构造器参数时要考虑使用构建器</h2><p>对于有几个必需参数以及很多个可选参数的构造函数，而且很多产品在某些可选域内都会有非零的值</p>
-<p>1.重叠构造器</p>
-<p>在这种模式下，提供的第一个构造器只有必要的参数，第二个构造器有一个可选参数，第三个构造器有两个可选参数，以此类推，最后一个构造器包含所有可选的参数。</p>
-<p>重叠构造器模式可行，但是当有许多参数的时候，客户端代码会很难编写，并且难以阅读</p>
-<a id="more"></a>
-
-<p>2.JavaBeans模式</p>
-<p>这种模式先调用一个无参的构造函数，再调用setter方法来设置每个必要的参数，以及每个相关的可选参数</p>
-<p>但是这种模式有很严重的缺点，构造过程被分到了几个调用中，在构造过程中JavaBeans可能处于不一致的状态，而且这种模式是的把类做成不可变的可能性不复存在，这就需要cxy付出额外的努力来保证线程安全</p>
-<p>3.建造者模式（Builder）</p>
-<p><a href="https://www.runoob.com/design-pattern/builder-pattern.html" target="_blank" rel="noopener">https://www.runoob.com/design-pattern/builder-pattern.html</a></p>
-<p>它不直接生成想要的对象，而是让客户端利用所有必要的参数调用的构造器（或者静态工厂）得到一个builder对象，然后让客户端在builder对象上调用类似于setter的方法，来设置每个相关的可选参数，最后，客户端调用午餐的build方法来生成通常是 <strong>它构建的类的静态成员类</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NutritionFacts</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servingSize;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servings;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> calories;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> fat;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> sodium;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> carbohydrate;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span></span>&#123;</span><br><span class="line">        <span class="comment">//Required para</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servingSize;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servings;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Optional para-initialized to default values</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> calories = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> fat = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> sodium = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> carbohydrate = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Builder</span><span class="params">(<span class="keyword">int</span> servingSize, <span class="keyword">int</span> servings)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.servingSize = servingSize;</span><br><span class="line">            <span class="keyword">this</span>.servings = servings;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">calories</span><span class="params">(<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">            calories = val;<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">fat</span><span class="params">(<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">            fat = val;<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">sodium</span><span class="params">(<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">            sodium = val;<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">carbohydrate</span><span class="params">(<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">            carbohydrate = val;<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> NutritionFacts <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NutritionFacts(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">NutritionFacts</span><span class="params">(Builder builder)</span></span>&#123;</span><br><span class="line">        servingSize = builder.servingSize;</span><br><span class="line">        servings = builder.servings;</span><br><span class="line">        calories = builder.calories;</span><br><span class="line">        fat = builder.fat;</span><br><span class="line">        sodium = builder.sodium;</span><br><span class="line">        carbohydrate = builder.carbohydrate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意NutritionFacts是不可变的，所有的默认参数值都单独放在一个地方，builder的设值方法返回builder本身，以便把调用链接起来，得到一个流式的API，这样的客户端代码很容易编写，Builder模式模拟了具名的可选参数，就像python一样</p>
-<p><code>NutritionFacts cocaCola = new Builder(210,8).calories(100).sodium(12).carbohydrate(21).build();</code></p>
-<p>Builder模式也适用于类层次结构，抽象类有抽象类的builder，具体类有具体的builder</p>
-<p>Builder模式也有自己的不足：它比重叠构造器模式更加冗长，因此它只有在有很多参数的时候才使用（&gt;=4),但是如果将来你可能要添加参数的话，使用构造器和静态工厂就会麻烦。因此，最好一开始就使用构建器</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Effective Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/26/effective_java3/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/26/ej4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Effective Java 第二章
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/11/25/effective_java2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Effective Java 第二章</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -327,8 +214,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

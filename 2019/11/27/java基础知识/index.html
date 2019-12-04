@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java 基础知识补充 | Swifthao</title>
+  <title>Java 基础教程 | Swifthao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简介1.Java语言是体系结构中立的： Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。 2.Java语言是可移植的： 这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Ja">
 <meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 基础知识补充">
+<meta property="og:title" content="Java 基础教程">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&#x2F;index.html">
 <meta property="og:site_name" content="Swifthao">
 <meta property="og:description" content="简介1.Java语言是体系结构中立的： Java程序（后缀为java的文件）在Java平台上被编译为体系结构中立的字节码格式（后缀为class的文件），然后可以在实现这个Java平台的任何系统中运行。这种途径适合于异构的网络环境和软件的分发。 2.Java语言是可移植的： 这种可移植性来源于体系结构中立性，另外，Java还严格规定了各个基本数据类型的长度。Java系统本身也具有很强的可移植性，Ja">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;java&#x2F;1.jpg">
-<meta property="og:updated_time" content="2019-11-30T12:47:22.000Z">
+<meta property="og:updated_time" content="2019-12-04T11:48:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;java&#x2F;1.jpg">
   
@@ -148,7 +148,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java 基础知识补充
+      Java 基础教程
     </h1>
   
 
@@ -175,14 +175,13 @@
 <img src="/img/java/1.jpg"/>
 </div>
 
-
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>1.synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。</p>
 <p>2.序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。<br>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</p>
 <p>3.volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。<br>一个 volatile 对象引用可能是 null。</p>
 <p>通常情况下，在一个线程调用 run() 方法（在 Runnable 开启的线程），在另一个线程调用 stop() 方法。 如果 第一行 中缓冲区的 active 值被使用，那么在 第二行 的 active 值为 false 时循环不会停止。<br>但是以上代码中我们使用了 volatile 修饰 active，所以该循环会停止。</p>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。<br>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。<br>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。<br>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。</p>
 <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-regular-expressions.html</a></p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做 finalize( )，它用来清除回收对象。<br>例如，你可以使用 finalize() 来确保一个对象打开的文件被关闭了。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做 finalize()，它用来清除回收对象。<br>例如，你可以使用 finalize() 来确保一个对象打开的文件被关闭了。</p>
 <h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p><a href="https://www.runoob.com/java/java-files-io.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-files-io.html</a></p>
 <h2 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h2><p><a href="https://www.runoob.com/java/java-scanner-class..html" target="_blank" rel="noopener">https://www.runoob.com/java/java-scanner-class..html</a></p>
 <h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p><a href="https://blog.csdn.net/booirror/article/details/20007009" target="_blank" rel="noopener">https://blog.csdn.net/booirror/article/details/20007009</a></p>
@@ -190,6 +189,66 @@
 <li>逻辑操作 &amp;&amp; || ！</li>
 <li>按位操作 &amp; | ^</li>
 </ul>
+<h2 id="java中的“虚函数”"><a href="#java中的“虚函数”" class="headerlink" title="java中的“虚函数”"></a>java中的“虚函数”</h2><p>虚函数的存在是为了多态。</p>
+<p>Java 中其实没有虚函数的概念，它的普通函数就相当于 C++ 的虚函数，动态绑定是Java的默认行为。如果 Java 中不希望某个函数具有虚函数特性，可以加上 final 关键字变成非虚函数。</p>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>1.抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。</p>
+<p>2.抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</p>
+<p>3.抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。</p>
+<p>4.构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。</p>
+<p>5.抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>1.<strong>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。</strong></p>
+<p>2.一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。</p>
+<p>3.接口和类的相似点</p>
+<ul>
+<li>一个接口可以有多个方法。</li>
+<li>接口文件保存在 .java 结尾的文件中，文件名使用接口名。</li>
+<li>接口的字节码文件保存在 .class 结尾的文件中。</li>
+<li>接口相应的字节码文件必须在与包名称相匹配的目录结构中。</li>
+</ul>
+<p>4.接口和类区别</p>
+<ul>
+<li>接口不能用于实例化对象。</li>
+<li>接口没有构造方法。</li>
+<li>接口中所有的方法必须是抽象方法。</li>
+<li>接口不能包含成员变量，除了 static 和 final 变量。</li>
+<li>接口不是被类继承了，而是要被类实现</li>
+<li>接口支持多继承</li>
+</ul>
+<p>5.接口的特点</p>
+<ul>
+<li>接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 public abstract（只能是 public abstract，其他修饰符都会报错）<strong>接口是隐式抽象的，当声明一个接口的时候，不必使用abstract关键字</strong> ，<strong>接口中每一个方法也是隐式抽象的，声明时同样不需要abstract关键字</strong> ， <strong>接口中的方法都是公有的</strong></li>
+<li>接口中可以含有变量，但是接口中的变量会被隐式的指定为 public static final 变量（并且只能是 public，用 private 修饰会报编译错误）</li>
+<li>接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法</li>
+</ul>
+<p>6.抽象类与接口的区别：<strong>JDK 1.8 以后，接口里可以有静态方法和方法体了</strong></p>
+<ul>
+<li>抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行</li>
+<li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的</li>
+<li>一个类只能继承一个抽象类，而一个类却可以实现多个接口</li>
+</ul>
+<p>7.接口是允许多继承的（一个接口可以继承多个其他接口）</p>
+<p>8.标记接口</p>
+<p>最常用的继承接口是没有包含任何方法的接口。</p>
+<p>标记接口是没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。</p>
+<p>标记接口作用：简单形象的说就是给某个对象打个标（盖个戳），使对象拥有某个或某些特权。</p>
+<p>没有任何方法的接口被称为标记接口。标记接口主要用于以下两种目的：</p>
+<ul>
+<li>建立一个公共的父接口：</li>
+</ul>
+<p>正如EventListener接口，这是由几十个其他接口扩展的Java API，你可以使用一个标记接口来建立一组接口的父接口。例如：当一个接口继承了EventListener接口，Java虚拟机(JVM)就知道该接口将要被用于一个事件的代理方案。</p>
+<ul>
+<li>向一个类添加数据类型：</li>
+</ul>
+<p>这种情况是标记接口最初的目的，实现标记接口的类不需要定义任何接口方法(因为标记接口根本就没有方法)，但是该类通过多态性变成一个接口类型。</p>
+<h2 id="Java包：为了更好地组织类，Java-提供了包机制，用于区别类名的命名空间"><a href="#Java包：为了更好地组织类，Java-提供了包机制，用于区别类名的命名空间" class="headerlink" title="Java包：为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间"></a>Java包：为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间</h2><p>1.包的作用</p>
+<ul>
+<li>把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用</li>
+<li>如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突</li>
+<li>包也限定了访问权限，拥有包访问权限的类才能访问某个包中的类</li>
+</ul>
+<p>2.通常，一个公司使用它互联网域名的颠倒形式来作为它的包名.例如：互联网域名是 runoob.com，所有的包名都以 com.runoob 开头。包名中的每一个部分对应一个子目录。</p>
+<p>3.类目录的绝对路径叫做 class path。设置在系统变量 CLASSPATH 中。编译器和 java 虚拟机通过将 package 名字加到 class path 后来构造 .class 文件的路径。</p>
+<p>一个 class path 可能会包含好几个路径，多路径应该用分隔符分开。默认情况下，编译器和 JVM 查找当前目录。JAR 文件按包含 Java 平台相关的类，所以他们的目录默认放在了 class path 中</p>
 
       
 
@@ -423,11 +482,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Effective Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">-Effective Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,7 +494,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,15 +502,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +510,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
               </li>
             
             <div class="clearfix"></div>
