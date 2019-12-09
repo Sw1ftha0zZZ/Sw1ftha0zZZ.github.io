@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Swifthao">
 <meta property="og:description" content="第3条 用私有构造器或者枚举类型强化Singleton属性Singleton指仅仅被实例化一次的类。Singleton通常被用来代表一个无状态的对象，如函数（24条），或者那些本质上唯一的组件。使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的接口 实现Singleton有两种常见的方法。这两种方法都要保持构造器为私有的，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-30T11:20:51.000Z">
+<meta property="og:updated_time" content="2019-12-06T13:21:10.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -164,7 +164,7 @@
 <a id="more"></a>
 
 <p>1.在第一种方法中，公有静态成员是个final域：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Singleton with public final field</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Elvis</span></span>&#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Elvis INSTANCE = <span class="keyword">new</span> Elvis();</span><br><span class="line">       <span class="function"><span class="keyword">private</span> <span class="title">Elvis</span><span class="params">()</span></span>&#123;</span><br><span class="line">              pass;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leaveTheBuilding</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Singleton with public final field</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Elvis</span></span>&#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Elvis INSTANCE = <span class="keyword">new</span> Elvis();</span><br><span class="line">       <span class="function"><span class="keyword">private</span> <span class="title">Elvis</span><span class="params">()</span></span>&#123;</span><br><span class="line">              ...</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leaveTheBuilding</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>私有构造器仅被调用一次，用来实例化公有的静态final域Elvis.INSTANCE。由于缺少公有的或受保护的构造器，所以保证了Elvis的全局唯一性：一旦Elvis类被实例化，将只会存在一个Elvis实例。客户端的任何行为都不会改变这一点，但要提醒一点：享有特权的客户端可以借助AccessibleObject.setAccessible方法，通过反射机制（65条）调用私有构造器，如果需要抵御这种攻击，可以修改构造器，让它在被要求创建第二个实例时抛出异常。</p>
 <p>2.在第二种方法中，公有的成员是个静态工厂方法</p>
@@ -182,32 +182,32 @@
 <h2 id="第4条-通过私有构造器强化不可实例化的能力"><a href="#第4条-通过私有构造器强化不可实例化的能力" class="headerlink" title="第4条 通过私有构造器强化不可实例化的能力"></a>第4条 通过私有构造器强化不可实例化的能力</h2><p>有时需要编写只包含静态方法和静态域的类（比如写一个包含所有要用到的常数的类Constants），例如java.lang.Math,java.util.Arrays等工具类，这些工具类不希望被实例化，实例化没有任何意义。然而在缺少显式构造器的情况下，编译器会自动提供一个公有的无参的缺省构造器。</p>
 <p>企图将类做成抽象类来强制该类不可被实例化是行不通的。</p>
 <p>由于当类不包含显式构造器时，编译器才会生成缺省的构造器，因此<strong>让该类包含一个私有的构造器可以保证它不会被实例化</strong></p>
-<p>这种用法的坏处：它使得一个类不可以被子类化，所有的构造器都必须显式或隐式调用超累构造器</p>
+<p>这种用法的坏处：它使得一个类不可以被子类化，所有的构造器都必须显式或隐式调用超类构造器</p>
 <hr>
 <h2 id="第5条-优先考虑依赖注入来引用资源"><a href="#第5条-优先考虑依赖注入来引用资源" class="headerlink" title="第5条 优先考虑依赖注入来引用资源"></a>第5条 优先考虑依赖注入来引用资源</h2><p>不要用Singleton和静态工具类来实现依赖一个或多个底层资源的类，且该资源的行为会影响到该类的行为，也不要直接用这个类来创建这些资源。而是应该将这些资源或工厂传给构造器，通过它们来创建类，这个实践被称为依赖注入</p>
 <hr>
-<h2 id="第6条-避免创建不必要的对象"><a href="#第6条-避免创建不必要的对象" class="headerlink" title="第6条 避免创建不必要的对象"></a>第6条 避免创建不必要的对象</h2><p>String.matches方法最易于查看一个字符串是否与正则表达式相匹配，但并不适合在注重性能的情形中重复使用，问题在于，它在内部为正则表达式创建了一个Pattern实例，却只用了一次，之后就被垃圾回收了，创建Pattern实例的成本很高，因为需要把正则表达式编译成一个有限状态机</p>
+<h2 id="第6条-避免创建不必要的对象"><a href="#第6条-避免创建不必要的对象" class="headerlink" title="第6条 避免创建不必要的对象"></a>第6条 避免创建不必要的对象</h2><p>String.matches方法最易于查看一个字符串是否与正则表达式相匹配，但并不适合在注重性能的情形中重复使用，问题在于，它在内部为正则表达式创建了一个Pattern实例，却只用了一次，之后就被垃圾回收了，创建Pattern实例的成本很高，因为需要<strong>把正则表达式编译成一个有限状态机</strong></p>
 <p>为了提升性能，应该将正则表达式显式编译成一个Pattern实例，让它成为类初始化的一部分，并将它缓存起来</p>
-<p>另外要优先使用基本类型而不是装箱基本类型，要当心无意识的自动装箱</p>
+<p>另外要<strong>优先使用基本类型而不是装箱基本类型，要当心无意识的自动装箱</strong></p>
 <hr>
 <h2 id="第7条-消除过期的对象引用"><a href="#第7条-消除过期的对象引用" class="headerlink" title="第7条 消除过期的对象引用"></a>第7条 消除过期的对象引用</h2><p>清空对象引用应该是一种例外，而不是一种规范行为</p>
 <p>只要类是自己管理内存，cxy就应该警惕内存泄露问题</p>
 <p>内存泄露的另一个常见来源是缓存</p>
 <p>第三个常见来源是监听器和其他回调</p>
 <hr>
-<h2 id="第8条-避免使用终结方法和清除方法"><a href="#第8条-避免使用终结方法和清除方法" class="headerlink" title="第8条 避免使用终结方法和清除方法"></a>第8条 避免使用终结方法和清除方法</h2><p>终结方法（finalizer）通常是不可预测的，也是危险的，一般情况下是不必要的。在Java9中用清除方法（cleaner）代替了终结方法，清除方法没有终结方法那么危险，但仍然是不可预测和没必要的</p>
+<h2 id="第8条-避免使用终结方法和清除方法"><a href="#第8条-避免使用终结方法和清除方法" class="headerlink" title="第8条 避免使用终结方法和清除方法"></a>第8条 避免使用终结方法和清除方法</h2><p>终结方法（finalizer）通常是不可预测的，也是危险的，一般情况下是不必要的。在Java9中用清除方法（cleaner）代替了终结方法，清除方法没有终结方法那么危险，但仍然是不可预测和没必要的，<strong>使用终结方法和清除方法有一个非常严重的性能损失</strong></p>
 <p>注重时间的任务不该由终结方法或者清除方法来完成，不要依赖终结方法和清除方法来更新重要的持久状态</p>
-<p>如果类的对象封装的资源确实需要终止，最佳实践是让类实现AutoCloseable，并要求客户段在每个实例不需要的时候调用close（）方法，一般是用 <strong>try-with-resouces</strong> 确保终止，即使遇到异常也是如此</p>
+<p>如果类的对象封装的资源确实需要终止，最佳实践是让类实现<strong>AutoCloseable</strong>，并要求客户段在每个实例不需要的时候<strong>调用close（）方法</strong>，一般是用 <strong>try-with-resouces</strong> 确保终止，即使遇到异常也是如此</p>
 <p>终结方法和清除方法可以作为当资源所有者忘记调用close方法时的安全网，<strong>虽然这样不能保证终结方法或者清除方法会及时运行</strong>，但是在客户端无妨正常结束操作的情况下，迟一点释放资源总比永远不释放要好，如果要编写安全网终结方法，就要考虑清楚，这种保护是否指的付出这样的代价</p>
 <hr>
 <h2 id="第9条-try-with-resources优先于try-finally"><a href="#第9条-try-with-resources优先于try-finally" class="headerlink" title="第9条 try-with-resources优先于try-finally"></a>第9条 try-with-resources优先于try-finally</h2><p>这个方法可以保证资源在不用时一定会被关闭</p>
 <p>在处理必须关闭的资源时，使用try-with-resources语句替代try-finally语句。 生成的代码更简洁，更清晰，并且生成的异常更有用。 try-with-resources语句在编写必须关闭资源的代码时会更容易，也不会出错，而使用try-finally语句实际上是不可能的。</p>
 <p><a href="https://www.runoob.com/java/java9-try-with-resources-improvement.html" target="_blank" rel="noopener">https://www.runoob.com/java/java9-try-with-resources-improvement.html</a></p>
 <p>要使用try-with-resources的资源，必须实现AutoCloseable接口，其中包括了单个返回void的close方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(resources)&#123;</span><br><span class="line">       <span class="comment">//括号里面的resources在不用时一定会被关闭</span></span><br><span class="line">       pass;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(resources)&#123;</span><br><span class="line">       <span class="comment">//括号里面的resources在不用时一定会被关闭</span></span><br><span class="line">       ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在try-with-resources中还可以使用catch子句</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(resources)&#123;</span><br><span class="line">       pass;</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">       pass;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(resources)&#123;</span><br><span class="line">       ...</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">       ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -441,10 +441,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-Effective Java</a>
               </li>
              
@@ -453,7 +449,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,11 +457,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
+                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-开源项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,11 +469,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
               </li>
             
             <div class="clearfix"></div>
