@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Swifthao">
 <meta property="og:description" content="第三章 对所有对象都通用的方法尽管Object是一个具体类，但设计它主要是为了扩展。它的所有非final方法（equals，hashCode，toString，clone和finalize）都有明确的通用规定（general contract），因为它们设计成是要被覆盖（Override）的。任何一个类，它在覆盖这些方法的时候，都有责任遵守这些通用的约定；如果不能做到这一点，其他依赖于这些约定的类">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-06T13:55:55.000Z">
+<meta property="og:updated_time" content="2020-01-10T09:43:45.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Swifthao" type="application/atom+xml">
@@ -164,7 +164,33 @@
 
 <p>本章将讲述何时以及如何覆盖这些非final的Object方法。本章不再讨论finalize方法，因为在第8条中已经说过了。而Comparable.compareTo虽然不是Object方法，但是本章也将对它进行讨论，因为它具有类似的特征。</p>
 <hr>
-<h2 id="第10条-覆盖equals时要遵守通用约定"><a href="#第10条-覆盖equals时要遵守通用约定" class="headerlink" title="第10条 覆盖equals时要遵守通用约定"></a>第10条 覆盖equals时要遵守通用约定</h2>
+<h2 id="第10条-覆盖equals时要遵守通用约定"><a href="#第10条-覆盖equals时要遵守通用约定" class="headerlink" title="第10条 覆盖equals时要遵守通用约定"></a>第10条 覆盖equals时要遵守通用约定</h2><p>最好不要覆盖equals方法，如果类有自己特有的逻辑相等概念（不等同于对象等同的概念），而且超类还没覆盖equals。这通常属于值类的情形，值类仅仅是一个表示值的类，例如Integer或者String。</p>
+<p>有一种值类不需要覆盖equals方法，即用实例受控确保每个值至多只存在一个对象的类，枚举类型就是这样的类。对于这样的类，逻辑相同就是对象相同</p>
+<p>覆盖equals时要遵守通用约定（Object规范）：自反，对称，传递，一致以及非null的x都有x.equals(null)==false</p>
+<p>一旦违反了equals约定，当其他对象面对你的对象时，你完全不知道这些对象的行为会怎么样</p>
+<p>无法在扩展可实例化类的同时，既增加新的值组件，又保留equals约定。可以在一个抽象类的子类中增加新的值组件且不违反equals约定，只要不可能直接创建超类的实例，前面所说的各种问题都不会发生。</p>
+<p>Timestamp对Date进行了扩展，并且增加了nanoseconds域，Timestamp的equals方法确实违反了对称性，Timestamp类有一个免责声明：不要混合使用Date和Timestamp对象</p>
+<p>一致性指相等的对象永远相等，不相等的对象永远不相等，不要使equals方法依赖于不可靠的资源。例如java.net.URL的equals方法依赖于对URL中主机IP地址的比较，这是一个错误的例子</p>
+<p>最后的几点忠告：</p>
+<p>1.覆盖equals时总要覆盖hashCode</p>
+<p>2.不要企图让equals过于智能：就只做到但存的测试域中的值是否相等。不要过度追求各种等价关系（别名等）</p>
+<p>3.不要把equals声明中的Object对象替换为其他的类型，如果替换了，这个是重载（Overload）而不是覆盖（Override）</p>
+<p>4.编写和测试equals和hashCode都是很繁琐的，最好使用Google开源的AutoValue框架。</p>
+<hr>
+<h2 id="第11条-覆盖equals时总要覆盖hashCode"><a href="#第11条-覆盖equals时总要覆盖hashCode" class="headerlink" title="第11条 覆盖equals时总要覆盖hashCode"></a>第11条 覆盖equals时总要覆盖hashCode</h2><p>如果两个对象的equals(Object)方法比较是相等的，那么对两个对象调用hashCode方法也必须相同。</p>
+<p>如果两个对象的equals(Object)方法比较是不相等的，那么对两个对象调用hashCode方法不一定不相同（但是给不相等的对象产生不同的hash，可能可以提高散列表的性能，一个好的散列函数倾向于为不相等的对象产生不相等的散列码）</p>
+<hr>
+<h2 id="第12条-始终要覆盖toString"><a href="#第12条-始终要覆盖toString" class="headerlink" title="第12条 始终要覆盖toString"></a>第12条 始终要覆盖toString</h2><p>Object提供的对toString方法的实现是一个包含类的名称，@符号以及散列码的无符号16进制表示法。</p>
+<p>建议所有的子类都覆盖这个方法。</p>
+<p>toString方法应该返回对象中包含的所有值得关注的信息</p>
+<p>静态工具类和大多数枚举类中都不应该编写toString方法</p>
+<p>AutoValue会替你自动生成toString方法</p>
+<hr>
+<h2 id="第13条-谨慎地覆盖clone"><a href="#第13条-谨慎地覆盖clone" class="headerlink" title="第13条 谨慎地覆盖clone"></a>第13条 谨慎地覆盖clone</h2><hr>
+<h2 id="第14条-考虑实现Comparable接口"><a href="#第14条-考虑实现Comparable接口" class="headerlink" title="第14条 考虑实现Comparable接口"></a>第14条 考虑实现Comparable接口</h2><p>于上面几个方法不同，compareTo方法并没有在Object类中声明。相反它是Comparable接口中唯一的方法。compareTo方法不但允许进行简单的等同性比较，而且允许执行顺序比较，除此之外，它与Object的equals方法具有相似的特征，它还是个泛型，类实现了Comparable接口就表明它的实例具有内在的排序关系，为实现Comparable接口的对象数组进行排序就是这么简单</p>
+<p>在compareTo方法中使用关系操作符&lt;和&gt;是很繁琐的而且容易错。应该用装箱基本类型的类中的compare方法比如：Double.compare</p>
+<p>总之对于排序敏感的类，都应该让这个类实现Comparable接口，在compareTo方法中，不要用&lt;和&gt;，应该用装箱基本类型的compare方法或者在Comparator接口中使用比较器构造方法。</p>
+
       
 
       
@@ -388,11 +414,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">-Effective Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-Effective Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -404,15 +430,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-生活杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,11 +442,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
+                <a href="javascript:void(0)" class="js-tag color1">-读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-资源分享</a>
               </li>
             
             <div class="clearfix"></div>
